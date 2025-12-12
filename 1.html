@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Fingerprint - Security Verification</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="3.css">
+</head>
+<body>
+
+<!-- Background Overlay -->
+<div class="bg-overlay"></div>
+
+<!-- View: Login -->
+<div id="view-login" class="card animate-in">
+    <div class="card-header">
+        <div class="icon-circle" data-icon="fingerprint"></div>
+        <h1 class="title">Digital Fingerprint</h1>
+        <p class="description">Secure Identity Verification Portal</p>
+    </div>
+    <div class="card-content">
+        <form id="login-form">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" placeholder="Enter your secure ID" required autocomplete="off">
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" placeholder="••••••••••••" required>
+            </div>
+
+            <button type="submit" id="login-btn">
+                <span data-icon="shieldCheck" style="display: inline-flex; width: 1em; height: 1em;"></span>
+                <span>Initiate Secure Login</span>
+            </button>
+        </form>
+
+        <div class="footer-text" style="display: flex; align-items: center; justify-content: center; gap: 0.5rem; margin-top: 2rem;">
+            <span style="width: 8px; height: 8px; background-color: #22c55e; border-radius: 50%; display: inline-block; animation: pulse 2s infinite;"></span>
+            System Operational • Encrypted Connection
+        </div>
+    </div>
+</div>
+
+<!-- View: Verification -->
+<div id="view-verification" class="card hidden">
+    <!-- Progress Bar -->
+    <div class="progress-bar-container">
+        <div id="progress-bar" class="progress-bar"></div>
+    </div>
+
+    <div class="card-content" style="padding-top: 2rem;">
+        <div style="text-align: center; margin-bottom: 2rem;">
+            <h1 class="title" style="font-size: 1.5rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+                <span data-icon="shieldCheck" style="color: hsl(var(--primary));"></span>
+                Security Verification
+            </h1>
+            <p class="description">Analysing digital footprint parameters...</p>
+        </div>
+
+        <div id="steps-wrapper">
+            <div id="steps-list">
+                <!-- Steps will be injected here by JS -->
+            </div>
+        </div>
+
+        <div id="result-container" class="hidden" style="margin-top: 1rem;">
+            <!-- Result will be injected here -->
+        </div>
+    </div>
+</div>
+
+<div class="footer-text" style="position: fixed; bottom: 1rem; width: 100%;">
+    This interface demonstrates a simulated security verification process for presentation purposes only.
+</div>
+
+<!-- Logic -->
+<script src="2.js"></script>
+</body>
+</html>
